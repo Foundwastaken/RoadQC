@@ -1,0 +1,19 @@
+@import "tailwindcss";
+@import "leaflet/dist/leaflet.css";
+
+@layer base {
+  body {
+    @apply bg-slate-50 text-slate-800 antialiased;
+  }
+}
+
+@layer utilities {
+  @keyframes slide-up {
+    from { transform: translateY(16px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+  }
+
+  .animate-slide-up {
+    animation: slide-up 0.25s ease-out;
+  }
+}
