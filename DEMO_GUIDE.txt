@@ -1,0 +1,301 @@
+================================================================================
+          ROAD SAFETY AUDIT SYSTEM — DEMO GUIDE
+          Gujarat Road Safety Authority
+          "Each Road, Safe Road"
+================================================================================
+
+LIVE URL:  [Paste your Vercel/Netlify URL here]
+REPO:      [Paste your GitHub repo URL here]
+
+================================================================================
+  TEST ACCOUNTS
+================================================================================
+
+  ADMIN:
+    Email:    admin@pravi.com
+    Password: password123
+    Portal:   /admin
+
+  AUDITOR:
+    Email:    auditor@pravi.com
+    Password: password123
+    Portal:   /dashboard
+
+  DESIGNER:
+    Email:    designer@pravi.com
+    Password: password123
+    Portal:   /designer
+
+  NOTE: Roles are auto-detected from email.
+        "admin" in email    = Admin role
+        "designer" in email = Designer role
+        All others          = Auditor role
+
+================================================================================
+  HOW TO RUN LOCALLY
+================================================================================
+
+  Prerequisites:
+    - Node.js 18 or higher
+    - npm 9 or higher
+
+  Steps:
+
+    1. Extract or clone the project folder
+
+    2. Open terminal in the project folder
+
+    3. Install dependencies:
+       npm install
+
+    4. Start the development server:
+       npm run dev
+
+    5. Open browser:
+       http://localhost:5173
+
+    6. Login with any of the test accounts above
+
+================================================================================
+  DEMO WALKTHROUGH
+================================================================================
+
+  STEP 1: LOGIN PAGE
+  ------------------
+  - Open the app URL
+  - You will see a government-themed landing page
+  - Gujarat Road Safety Authority branding and logo
+  - Highway hero image
+  - Scroll down to see About, Guidelines, Contact sections
+  - The login form is in the center of the page
+  - Login as "admin@pravi.com" first
+
+  STEP 2: ADMIN — CREATE AN AUDIT
+  --------------------------------
+  - After login you land on the Admin Dashboard
+  - Click "New Audit" button (top right)
+  - Fill in:
+      Road Name:   SG Highway
+      Location:    Sarkhej to Gandhinagar, Ahmedabad
+      Length (km):  21
+  - Assign team:
+      Auditor Email: auditor@pravi.com
+      Auditor Phone: +919876543210 (optional, for SMS)
+      Designer Email: designer@pravi.com
+      Designer Phone: +919876543210 (optional, for SMS)
+  - Click "Create Audit"
+  - The audit appears in the list with status "Assigned"
+
+  STEP 3: ADMIN — SET ROAD COORDINATES & VIEW MAP
+  ------------------------------------------------
+  - Click on the audit card to open the detail page
+  - Scroll to "Road Map & Coordinates" section
+  - Enter coordinates:
+      Start Lat:  22.983
+      Start Lng:  72.502
+      End Lat:    23.135
+      End Lng:    72.541
+  - Click "Save Coordinates"
+  - The system fetches the real driving route from Google Maps
+  - Map shows the road stretch with start (green) and end (red) markers
+  - Route distance and duration are displayed below the map
+  - Go back to dashboard and click "View Map" to see all audits on one map
+
+  STEP 4: AUDITOR — CONDUCT THE AUDIT
+  ------------------------------------
+  - Logout from admin
+  - Login as "auditor@pravi.com"
+  - You see the Auditor Dashboard with the assigned audit
+  - Optional: Enter your phone number at the top for SMS notifications
+  - Click on the audit card
+  - You enter the 10-step audit workflow:
+
+    Step 1 — Team Selection:
+      - Add team members with name, role, qualification
+      - Click "Save & Continue"
+
+    Step 2 — Background Data:
+      - Enter traffic data, accident data, notes
+      - Click "Save & Continue"
+
+    Step 3 — Commencement Meeting:
+      - Enter meeting date and notes
+      - Click "Save & Continue"
+
+    Step 4 — Desk Study:
+      - Check items: geometry, junctions, alignment, signage, drainage
+      - Click "Save & Continue"
+
+    Step 5 — Site Inspection (KEY FEATURE):
+      - Select Day or Night mode
+      - Click "Start Tracking" — GPS begins tracking your location
+      - Walk or drive along the road
+      - The distance counter updates in real time (Haversine formula)
+      - Upload road photos:
+          * Click "Upload Images"
+          * Select photos from your device
+          * AI (Google Gemini) validates if the image is a road
+          * Non-road images (selfies, etc.) are rejected with a message
+          * Valid images show a green checkmark
+      - Click "Stop Tracking"
+      - Coverage is calculated: (distance / road length) x 100
+      - Coverage >= 80% shows "Valid" status
+      - Click "Save & Continue"
+
+    Step 6 — Safety Issues:
+      - Click "Add Issue"
+      - Enter title, description, select severity (High/Medium/Low)
+      - Add multiple issues
+      - Click "Save & Continue"
+
+    Step 7 — Audit Report:
+      - Review the auto-generated summary
+      - Click "Generate PDF" to download the full report
+      - PDF includes: cover page, team, background data, desk study,
+        inspection stats, embedded photos, issues table, meeting notes
+      - Click "Save & Continue"
+
+    Step 8 — Completion Meeting:
+      - Enter final meeting notes
+      - Click "Save & Continue"
+
+    Steps 9 & 10 — Designer Response and Implementation:
+      - These are filled by the Designer (shown in next step)
+
+  - Click "Submit Report" button (appears after step 6)
+  - Status changes to "Report Submitted"
+  - The audit is now locked for the auditor
+
+  STEP 5: ADMIN — REVIEW & APPROVE
+  ----------------------------------
+  - Login as "admin@pravi.com"
+  - The audit now shows "Report Submitted" status
+  - Click on it to open the detail page
+  - You see two action buttons:
+      "Approve Report" — moves to Approved status
+      "Reject Report"  — sends back to auditor
+  - Click "Approve Report"
+  - Then click "Move to Implementation"
+  - Scroll down to see all issues
+  - For each issue, click the green check (Approve) or red X (Reject)
+  - Download the PDF report anytime using the download button
+
+  STEP 6: DESIGNER — RESPOND TO ISSUES
+  -------------------------------------
+  - Login as "designer@pravi.com"
+  - You see the Designer Portal
+  - The audit shows "Action Required" badge
+  - Click to expand the audit
+  - For each safety issue:
+      - Select response: "Accepted" or "Rejected"
+      - Enter response notes explaining the action taken
+      - Select implementation status: Pending / In Progress / Completed
+      - Click "Save Response"
+  - Once all issues are responded to, status moves to "Under Review"
+
+  STEP 7: ADMIN — FINAL REVIEW & CLOSE
+  -------------------------------------
+  - Login as admin again
+  - See the audit with updated designer responses
+  - Review each issue with designer's response
+  - Click "Close Audit" to complete the lifecycle
+  - The audit status changes to "Closed"
+
+================================================================================
+  KEY FEATURES SUMMARY
+================================================================================
+
+  1. GOVERNMENT-THEMED UI
+     - Gujarat Road Safety Authority branding
+     - Official dark blue color scheme
+     - GRSA logo in header, hero, and footer
+     - Responsive — works on mobile, tablet, desktop
+
+  2. 3-ROLE SYSTEM
+     - Admin: Creates audits, assigns teams, approves reports
+     - Auditor: Conducts inspections, identifies issues, submits reports
+     - Designer: Responds to safety issues, tracks implementation
+
+  3. 10-STAGE AUDIT WORKFLOW (IRC SP 88:2019)
+     - Team Selection
+     - Background Data Collection
+     - Commencement Meeting
+     - Desk Study (Checklist)
+     - Site Inspection (GPS + Camera + AI)
+     - Safety Issue Identification
+     - Audit Report (PDF Generation)
+     - Completion Meeting
+     - Designer Response
+     - Implementation Tracking
+
+  4. GPS SITE INSPECTION
+     - Real-time location tracking
+     - Haversine formula for distance calculation
+     - Road coverage percentage validation
+     - Day/Night inspection modes
+
+  5. AI IMAGE VALIDATION
+     - Google Gemini 2.5 Flash Lite
+     - Validates that uploaded images are of roads
+     - Rejects selfies, indoor photos, non-road images
+     - Shows validation result with reason
+
+  6. INTERACTIVE MAPS
+     - Leaflet + OpenStreetMap tiles
+     - Road stretch polylines (start to end)
+     - Google Directions API for real driving routes
+     - Color-coded issue markers:
+         Red    = High severity
+         Amber  = Medium severity
+         Green  = Low severity
+     - Click markers for issue details
+
+  7. PDF REPORT GENERATION
+     - Full audit report downloadable as PDF
+     - Includes all 10 stages of data
+     - Embedded inspection images
+     - Issue summary with severity breakdown
+     - Team and meeting information
+
+  8. SMS NOTIFICATIONS (Twilio)
+     - SMS sent when audit is created
+     - SMS sent when status changes
+     - Dynamic phone numbers (admin enters them)
+     - Auditor can self-update their phone number
+
+  9. AUDIT LIFECYCLE
+     Created → Assigned → In Progress → Report Submitted
+     → Under Review → Approved/Rejected → Implementation → Closed
+
+ 10. ADDITIONAL
+     - Download PDF from dashboard and history pages
+     - Status badges with color coding
+     - Audit stepper showing progress
+     - Role-based route protection
+     - Toast notifications for actions
+
+================================================================================
+  TECH STACK
+================================================================================
+
+  Frontend:     React 19 + Vite 7 + Tailwind CSS 4
+  Backend:      Firebase (Authentication, Firestore, Cloud Functions)
+  Maps:         Leaflet + react-leaflet + OpenStreetMap
+  Routes:       Google Maps Directions API
+  AI:           Google Gemini 2.5 Flash Lite
+  PDF:          jsPDF + jspdf-autotable
+  SMS:          Twilio (via Firebase Cloud Functions)
+  Hosting:      Vercel / Netlify
+
+================================================================================
+  CONTACT
+================================================================================
+
+  Gujarat Road Safety Authority
+  Roads & Buildings Department
+  Block No. 14, New Sachivalaya
+  Gandhinagar, Gujarat — 382010
+
+================================================================================
+  END OF DEMO GUIDE
+================================================================================
