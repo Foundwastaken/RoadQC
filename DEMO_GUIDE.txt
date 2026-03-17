@@ -4,8 +4,8 @@
           "Each Road, Safe Road"
 ================================================================================
 
-LIVE URL:  [Paste your Vercel/Netlify URL here]
-REPO:      [Paste your GitHub repo URL here]
+LIVE URL:  [https://road-qc-wine.vercel.app]
+REPO:      [https://github.com/Foundwastaken/RoadQC]
 
 ================================================================================
   TEST ACCOUNTS
@@ -13,17 +13,20 @@ REPO:      [Paste your GitHub repo URL here]
 
   ADMIN:
     Email:    admin@pravi.com
-    Password: password123
+    Password: pravi@road
+
     Portal:   /admin
 
   AUDITOR:
     Email:    auditor@pravi.com
-    Password: password123
+    Password: pravi@road
+
     Portal:   /dashboard
 
   DESIGNER:
     Email:    designer@pravi.com
-    Password: password123
+    Password: pravi@road
+
     Portal:   /designer
 
   NOTE: Roles are auto-detected from email.
@@ -135,8 +138,14 @@ REPO:      [Paste your GitHub repo URL here]
           * Click "Upload Images"
           * Select photos from your device
           * AI (Google Gemini) validates if the image is a road
-          * Non-road images (selfies, etc.) are rejected with a message
           * Valid images show a green checkmark
+
+      *** TRY THIS: Upload a wrong image (selfie, food photo, indoor
+          photo, random object, etc.) — the system will AUTOMATICALLY
+          REJECT it with a red overlay and a message explaining why.
+          Only actual road/highway images are accepted. This prevents
+          auditors from uploading irrelevant photos. ***
+
       - Click "Stop Tracking"
       - Coverage is calculated: (distance / road length) x 100
       - Coverage >= 80% shows "Valid" status
@@ -298,6 +307,50 @@ REPO:      [Paste your GitHub repo URL here]
   Roads & Buildings Department
   Block No. 14, New Sachivalaya
   Gandhinagar, Gujarat — 382010
+
+================================================================================
+  A NOTE FROM JITENDRA
+================================================================================
+
+  Hey Pravi Team,
+
+  It was really fun building this! What started as a road quality inspection
+  tool quickly grew into a full-fledged Road Safety Audit System that follows
+  the actual IRC SP 88 government audit workflow. The app covers the complete
+  lifecycle — from an admin creating and assigning audits, to auditors going
+  out in the field with GPS tracking and AI-validated photo capture, to
+  designers responding to safety issues, and finally generating professional
+  PDF reports. There's a 3-role portal system, interactive maps with route
+  plotting, phone number collection for SMS notifications, and a
+  government-themed UI modeled after the Gujarat Roads & Buildings Department.
+
+  That said, I had many more ideas that I couldn't get to due to time:
+
+  - Proper Google Maps integration with live traffic statistics, heatmaps
+    of accident-prone zones, and real-time road condition overlays
+  - A native mobile app (React Native or Flutter) instead of just a
+    responsive webpage — inspectors in the field would benefit hugely
+    from offline support, background GPS tracking, and native camera
+  - Dashboard analytics with charts showing audit trends, severity
+    distributions, average resolution times, and regional breakdowns
+  - A notification center with in-app alerts instead of just console logs
+  - Document upload support for drawings, DPRs, and existing reports
+
+  I would have especially loved to work more on the backend so that the
+  AI flows and checks for road inspections could be way more thorough.
+  Right now the Gemini-based image validation catches obvious fakes like
+  selfies and indoor photos, but with more time I'd add multi-point
+  verification — cross-checking GPS coordinates against known road
+  networks, validating image metadata (timestamp, location tags),
+  detecting if the same stretch of road is photographed multiple times
+  from slightly different angles to fake coverage, and using more
+  advanced vision models to verify road surface conditions, signage
+  visibility, and drainage status automatically. The goal would be to
+  make it impossible for someone to cheese the inspection process.
+
+  Thanks for the opportunity — I genuinely enjoyed this build.
+
+  — Jitendra Faldu
 
 ================================================================================
   END OF DEMO GUIDE
