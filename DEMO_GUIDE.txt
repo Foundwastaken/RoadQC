@@ -309,7 +309,7 @@ REPO:      [https://github.com/Foundwastaken/RoadQC]
   Gandhinagar, Gujarat — 382010
 
 ================================================================================
-  A NOTE FROM JITENDRA
+  A NOTE FROM Jash
 ================================================================================
 
   Hey Pravi Team,
@@ -350,7 +350,7 @@ REPO:      [https://github.com/Foundwastaken/RoadQC]
 
   Thanks for the opportunity — I genuinely enjoyed this build.
 
-  — Jitendra Faldu
+  — Jash Faldu
 
 ================================================================================
   END OF DEMO GUIDE
