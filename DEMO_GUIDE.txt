@@ -257,11 +257,14 @@ REPO:      [Paste your GitHub repo URL here]
      - Issue summary with severity breakdown
      - Team and meeting information
 
-  8. SMS NOTIFICATIONS (Twilio)
-     - SMS sent when audit is created
-     - SMS sent when status changes
-     - Dynamic phone numbers (admin enters them)
-     - Auditor can self-update their phone number
+  8. SMS NOTIFICATIONS (Twilio) [NOT YET ACTIVE]
+     - Feature is fully coded and ready to deploy
+     - NOT currently working — Twilio account registration
+       and configuration was not completed due to time constraints
+     - Once Twilio credentials are set up, SMS will be sent
+       automatically when audits are created or status changes
+     - Phone number input fields are functional in the UI
+     - Cloud Function code is in the functions/ folder, ready to deploy
 
   9. AUDIT LIFECYCLE
      Created → Assigned → In Progress → Report Submitted
