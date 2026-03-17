@@ -35,6 +35,22 @@ REPO:      [https://github.com/Foundwastaken/RoadQC]
         All others          = Auditor role
 
 ================================================================================
+  REFERENCE
+================================================================================
+
+  The entire audit workflow, stages, and process in this application are
+  based on the official Road Safety Audit Manual published by NHAI
+  (National Highways Authority of India):
+
+  Source: https://nhai.gov.in/nhai/sites/default/files/2019-02/Road_Safety_Audit_Manual.pdf (PDF, 108 pages)
+
+  This manual defines the standard procedure for conducting road safety
+  audits on Indian national highways, including team qualifications,
+  inspection methodology, issue categorization, report format, and the
+  designer response process. Our 10-stage workflow directly follows the
+  guidelines outlined in this document and IRC SP 88:2019.
+
+================================================================================
   HOW TO RUN LOCALLY
 ================================================================================
 
